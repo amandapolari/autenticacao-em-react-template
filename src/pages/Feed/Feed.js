@@ -5,7 +5,15 @@ import useRequestData from '../../hooks/useRequestData';
 import { FeedContainer } from './styled';
 
 export default function Feed() {
-    const [posts] = useRequestData([], '/posts');
+    const tokenLogado = localStorage.getItem('token');
+
+    const config = {
+        headers: {
+            Authorization: tokenLogado,
+        },
+    };
+
+    const [posts] = useRequestData([], '/posts', config);
 
     return (
         <FeedContainer>

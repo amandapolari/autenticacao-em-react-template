@@ -53,3 +53,28 @@ Caso você não tenha feito ou tenha problemas não corrigidos no template anter
     ```
 
 2. Prática 2
+
+-   Em `enviaLogin` de `Login.js`:
+
+    ```
+        const enviaLogin = (e) => {
+            e.preventDefault();
+            console.log(form);
+
+            const body = {
+                email: form.email,
+                password: form.password,
+            };
+
+            axios
+                .post(`${BASE_URL}/users/login`, body)
+                .then((resp) => {
+                    console.log(resp.data.token);
+                    localStorage.setItem('token', resp.data.token);
+                    irParaFeed(navigate);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        };
+    ```

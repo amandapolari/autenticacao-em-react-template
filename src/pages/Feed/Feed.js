@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CardPost from '../../components/CardPost/CardPost';
 import CriarPost from '../../components/CriarPost/CriarPost';
 import useRequestData from '../../hooks/useRequestData';
 import { FeedContainer } from './styled';
+import { irParaLogin } from '../../routes/coordinator';
+import { useNavigate } from 'react-router-dom';
 
 export default function Feed() {
+    const navigate = useNavigate();
+    const token = localStorage.getItem('token');
+    console.log(token);
+
+    useEffect(() => {
+        if (!token) {
+            irParaLogin(navigate);
+        }
+    }, []);
+
     const tokenLogado = localStorage.getItem('token');
 
     const config = {

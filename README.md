@@ -6,7 +6,7 @@
 -   [2. Prática 2](#prática-2)
 -   [3. Prática 3](#prática-3)
 -   [4. Prática 4](#prática-4)
--   [4. Fixação](#fixação)
+-   [5. Fixação](#fixação)
 
 ## Prática 1
 
@@ -131,5 +131,19 @@
     ```
 
 ## Prática 4
+
+-   Em `Feed.js`:
+
+    ```
+        const navigate = useNavigate();
+        const token = localStorage.getItem('token');
+        console.log(token);
+
+        useEffect(() => {
+            if (!token) {
+                irParaLogin(navigate);
+            }
+        }, []);
+    ```
 
 ## Fixação

@@ -1,13 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContainerLogin = styled.main`
-
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
 
 export const ContainerForm = styled.form`
     display: flex;
@@ -23,9 +22,8 @@ export const ContainerForm = styled.form`
     border: 5px double darkgray;
     border-radius: 15px;
     margin-bottom: 32px;
-`
+`;
 
 export const Input = styled.input`
     margin-bottom: 32px;
-`
-
+`;

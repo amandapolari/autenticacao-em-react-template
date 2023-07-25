@@ -26,6 +26,7 @@ export default function CriarPost() {
             .then((resp) => {
                 console.log(resp.data);
                 limparCampos();
+                window.location.reload();
             })
             .catch((err) => {
                 console.log(err);
